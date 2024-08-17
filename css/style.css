@@ -41,7 +41,6 @@ html {
 }
 
 .search {
-  background-color: orangered;
   flex: 0 0 40%;
   display: flex;
   justify-content: center;
@@ -84,19 +83,195 @@ html {
 }
 
 .user-nav {
-  background-color: yellowgreen;
-}
-.user-nav {
   display: flex;
-  justify-content: space-between;
+  cursor: pointer;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+}
+.user-nav > * {
+  padding: 0 2rem;
+  display: flex;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.user-nav > *:hover {
+  background-color: var(--color-grey-light-3);
+}
+.user-nav__icon-box {
+  position: relative;
 }
 .user-nav__icon {
   height: 2.5rem;
   width: 2.5rem;
+  fill: var(--color-grey-dark-2);
+}
+.user-nav__notification {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  height: 1.75rem;
+  width: 1.75rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  font-size: 1rem;
 }
 .user-nav__user {
   width: 3.75rem;
+  height: 3.75rem;
   border-radius: 100%;
+}
+.user-nav__user-name {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.sidebar-nav {
+  list-style: none;
+  font-size: 1.4rem;
+  color: var(--color-grey-light-1);
+  margin-top: 4rem;
+}
+.sidebar-nav__link:link, .sidebar-nav__link:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--color-grey-light-1);
+  display: flex;
+  padding: 1rem 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+.sidebar-nav__link:active {
+  background-color: var(--color-primary-light);
+}
+.sidebar-nav__icon {
+  height: 1.75rem;
+  width: 1.75rem;
+  margin-inline: 2rem;
+  fill: currentColor;
+}
+.sidebar-nav__item {
+  position: relative;
+}
+.sidebar-nav__item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.sidebar-nav__item::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleY(0);
+  background-color: var(--color-primary);
+  transition: transform 0.2s, width cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+}
+.sidebar-nav__item:hover::before, .sidebar-nav__item--active::before {
+  transform: scaleY(1);
+  width: 100%;
+}
+
+.user-nav__icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.legal {
+  color: var(--color-grey-light-1);
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.gellary {
+  display: flex;
+}
+.gellary__photo {
+  width: 100%;
+  display: block;
+}
+
+.overview {
+  display: flex;
+  border-bottom: 1px solid var(--color-grey-light-1);
+  align-items: center;
+}
+.overview__heading {
+  font-size: 2.5rem;
+  padding: 1.5rem 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.overview__stars {
+  margin-right: auto;
+  display: flex;
+}
+.overview__location {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.overview__icon-star, .overview__icon-location {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: var(--color-primary);
+}
+.overview__rating {
+  background-color: var(--color-primary);
+  margin-left: 2.5rem;
+  padding: 0 2rem;
+  color: white;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.overview__rating-average {
+  font-size: 2.25rem;
+  margin-bottom: -3px;
+}
+.overview__rating-count {
+  font-size: 1rem;
+}
+
+.button-inline {
+  border: none;
+  font-size: inherit;
+  color: var(--color-primary);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.button-inline:hover {
+  color: var(--color-grey-dark-2);
+}
+.button-inline:focus {
+  animation: pulstate 1s infinite;
+}
+
+@keyframes pulstate {
+  0% {
+    transform: translate(0);
+    box-shadow: 0;
+  }
+  50% {
+    transform: translate(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: translate(0);
+    box-shadow: 0;
+  }
 }
 .container {
   max-width: 120rem;
@@ -112,24 +287,23 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-1);
 }
 
 .content {
   display: flex;
+  height: 60rem;
 }
 .content .sidebar {
-  background-color: var(--color-grey-dark-2);
+  background-color: var(--color-grey-dark-1);
   flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .content .hotel-view {
-  background-color: blue;
   flex: 1;
-  background-color: orangered;
-}
-
-.user-nav__icon {
-  width: 2rem;
-  height: 2rem;
+  background-color: var(--color-grey-light-1);
 }
 
 /*# sourceMappingURL=style.css.map */
