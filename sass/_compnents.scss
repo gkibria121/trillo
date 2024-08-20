@@ -179,11 +179,11 @@
 
 .gellary {
   display: flex;
-    &__item{
-        // height: 100%;
-    }
+  &__item {
+    // height: 100%;
+  }
   &__photo {
-    width: 100%; 
+    width: 100%;
     display: block;
   }
 }
@@ -205,7 +205,7 @@
     margin-right: auto;
     display: flex;
   }
-  &__location{
+  &__location {
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -218,7 +218,7 @@
     fill: var(--color-primary);
   }
 
-  &__rating{
+  &__rating {
     background-color: var(--color-primary);
     margin-left: 2.5rem;
     padding: 0 2rem;
@@ -230,11 +230,11 @@
     justify-content: center;
   }
 
-  &__rating-average{
+  &__rating-average {
     font-size: 2.25rem;
     margin-bottom: -3px;
   }
-  &__rating-count{
+  &__rating-count {
     font-size: 1rem;
   }
 }
@@ -255,15 +255,13 @@
     }
   }
 
-  &:focus{
-
+  &:focus {
     animation: pulstate 1s infinite;
   }
   & span {
     margin-left: 0rem;
-    transition: margin-left .2s;
+    transition: margin-left 0.2s;
   }
- 
 }
 
 @keyframes pulstate {
@@ -281,29 +279,28 @@
   }
 }
 
-.paragraph{
-  &:not(:last-of-type){
+.paragraph {
+  &:not(:last-of-type) {
     margin-bottom: 2rem;
   }
 }
 
-.list{
+.list {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
   border-block: 1px solid var(--color-grey-light-3);
   margin-block: 3rem;
   padding-block: 3rem;
-  &__item{
-    
+  &__item {
     flex: 0 0 50%;
 
-    &::before{
+    &::before {
       content: "";
       display: inline-block;
       height: 1rem;
       width: 1rem;
-      margin-right: .7rem;
+      margin-right: 0.7rem;
       background-color: var(--color-primary);
       mask-image: url(../img/chevron-thin-right.svg);
       mask-size: cover;
@@ -311,19 +308,19 @@
   }
 }
 
-.recommend{
+.recommend {
   display: flex;
   color: var(--color-grey-dark-2);
   justify-content: space-between;
   align-items: center;
   font-weight: 400;
 
-  &__friends{
+  &__friends {
     display: flex;
     margin-right: 1rem;
   }
 
-  &__photo{
+  &__photo {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -332,45 +329,45 @@
     margin-right: -10px;
   }
 }
- 
-.review{
+
+.review {
   background-color: white;
   margin-bottom: 3.4rem;
   padding: 3rem;
   font-weight: 500;
   position: relative;
   overflow: hidden;
-  &__photo{
+  &__photo {
     width: 4.5rem;
     height: 4.5rem;
     border-radius: 50%;
   }
-  &__user-box{
-    margin-right: auto; 
+  &__user-box {
+    margin-right: auto;
     margin-left: 1rem;
-    .user-name{
+    .user-name {
       font-weight: 600;
       font-size: 1.3rem;
-      
+
       text-transform: uppercase;
     }
-    .user-date{
+    .user-date {
       font-size: 1rem;
       color: var(--color-grey-dark-2);
     }
   }
-  &__user{
-    display: flex; 
+  &__user {
+    display: flex;
     align-items: center;
     margin-top: 1rem;
   }
-  &__rating{
+  &__rating {
     color: var(--color-primary);
     font-size: 2rem;
   }
-  &::before{
-    content: "\201C"; 
-    line-height: 1 ;
+  &::before {
+    content: "\201C";
+    line-height: 1;
     position: absolute;
     display: inline;
     top: -2rem;
@@ -380,8 +377,60 @@
     color: var(--color-grey-light-2);
     font-family: sans-serif;
   }
-  &__text{
+  &__text {
     position: relative;
     z-index: 10;
+  }
+}
+
+.cta {
+  text-align: center;
+  background-color: white;
+  padding: 3.5rem 0;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 300;
+  &__text {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.btn {
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+  border: none;
+  padding: 2.5rem 7rem;
+  border-radius: 100px;
+  font-size: 1.8rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  & > * {
+    display: inline-block;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s;
+  }
+
+  &__invisible {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 2.5rem 3rem;
+  }
+
+  &:hover &__visible {
+    transform: translateY(250%);
+  }
+  &:hover &__invisible {
+    top: 0;
+  }
+  &:hover {
+    background-image: linear-gradient(to left, var(--color-primary), var(--color-primary-light));
+  }
+
+  &:focus{
+    animation: pulstate 1s infinite;
+    
   }
 }
