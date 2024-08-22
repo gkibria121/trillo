@@ -1,0 +1,25 @@
+$breakpionts : (
+    sm: 36em, // 576px 
+    md: 48em, // 786px
+    lg: 62em, //  992px
+    xl: 75em, // 1200px
+    xxl: 86.5em, // 1400px
+    sl : 112em // 1800px
+);
+
+$big-desktop :  112em;
+@mixin response-to($breakpiont){
+
+    $breakpoint-value : map-get($breakpionts, $breakpiont);
+
+    @if $breakpoint-value >= $big-desktop {
+        @media (min-width : $breakpoint-value ){
+            @content;
+        }
+    } @else {
+        @media (max-width :  $breakpoint-value ){
+            @content;
+        }
+    }
+ 
+}

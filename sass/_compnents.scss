@@ -12,7 +12,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  @include response-to(lg){
+    order: 1;
+  
+  }
+  @include response-to(md){
+    flex: 0 0 100%;
+    margin-bottom: 1rem;
+  
+  }
   &__input {
     width: 90%;
     font-size: 1.6rem;
@@ -60,6 +68,16 @@
     align-self: stretch;
     align-items: center;
     justify-content: center;
+    @include response-to(lg){
+      margin-right: auto;
+      margin-left: 3rem;
+    
+    }
+    @include response-to(md){
+      margin-right: 0;
+      margin-left: 0;
+    
+    }
   }
 
   & > * {
@@ -107,11 +125,15 @@
 }
 
 .sidebar-nav {
-  & {
+  
     list-style: none;
     font-size: 1.4rem;
     color: var(--color-grey-light-1);
     margin-top: 4rem;
+    @include response-to(lg){
+     display: flex;
+     margin: 0;
+     
   }
 
   &__link:link,
@@ -125,6 +147,15 @@
     align-items: center;
     position: relative;
     z-index: 10;
+    @include response-to(lg){
+      display: flex;
+      padding-top: 1.5rem;
+      flex-direction: column;
+      gap: .7rem 0;
+      justify-content: center;
+      
+  }
+    
   }
   &__link:active {
     background-color: var(--color-primary-light);
@@ -137,9 +168,18 @@
   }
   &__item {
     position: relative;
+    @include response-to(lg){
+      flex-grow: 1; 
+   }
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+      @include response-to(lg){
+        margin-bottom: 0;
+      
+     }
+      
     }
+ 
   }
   &__item::before {
     content: "";
@@ -159,10 +199,7 @@
   }
 }
 
-.search {
-  &__input {
-  }
-}
+ 
 .user-nav {
   &__icon {
     width: 2rem;
@@ -175,13 +212,14 @@
   font-size: 1.2rem;
   padding: 1rem;
   text-align: center;
+  @include response-to(lg){
+    display: none;
+}
 }
 
 .gellary {
   display: flex;
-  &__item {
-    // height: 100%;
-  }
+ 
   &__photo {
     width: 100%;
     display: block;
@@ -199,6 +237,16 @@
     padding: 1.5rem 3rem;
     font-weight: 300;
     text-transform: uppercase;
+
+    @include response-to(lg){
+      font-size: 2rem; 
+      margin-left: 3rem;
+     }
+     @include response-to(md){
+      font-size: 1.5rem; 
+    
+    }
+
   }
 
   &__stars {
@@ -390,6 +438,10 @@
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 300;
+  @include response-to(lg){
+    font-size: 1.2rem;
+
+}
   &__text {
     margin-bottom: 1.5rem;
   }
@@ -401,9 +453,20 @@
   padding: 2.5rem 7rem;
   border-radius: 100px;
   font-size: 1.8rem;
+
   color: white;
   position: relative;
   overflow: hidden;
+  @include response-to(lg){
+    font-size: 1.5rem;
+    padding: 2rem 5rem;
+
+}
+@include response-to(md){
+  font-size: 1.5rem;
+  padding: 2rem 5.5rem;
+
+}
   & > * {
     display: inline-block;
     text-transform: uppercase;
