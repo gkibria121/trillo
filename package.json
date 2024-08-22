@@ -4,7 +4,7 @@
   "description": "Landing page for natours",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass sass/main.scss css/style.css -w", 
+    "watch:sass": "sass sass/main.scss css/style.css -w",
     "start": "npm-run-all  watch:sass",
     "compile:sass": "sass sass/main.scss css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
@@ -16,7 +16,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.19",
     "npm-run-all": "^4.1.1",
-    "postcss-cli": "^11.0.0",
+    "postcss-cli": "^5.0.0",
     "sass": "^1.77.8"
   }
 }
